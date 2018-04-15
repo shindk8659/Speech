@@ -61,11 +61,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         guard let inputNode = audioEngine.inputNode else {
-            fatalError("Audio engine has no input node")
+            fatalError("오디오엔진이 연결되지않았습니다.")
         }
         
         guard let recognitionRequest = recognitionRequest else {
-            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
+            fatalError("SFSpeechAudioBufferRecognitionRequest() 요청되지않습니다.")
         }
         
         recognitionRequest.shouldReportPartialResults = true
@@ -101,10 +101,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         do {
             try audioEngine.start()
         } catch {
-            print("audioEngine couldn't start because of an error.")
+            print("에러입니다.")
         }
         
-        myTextView.text = "Say something, I'm listening!"
+        myTextView.text = "말해주세요~"
         
     }
     
